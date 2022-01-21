@@ -7,12 +7,14 @@ import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { Error404Component } from './error404/error404.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    Error404Component
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    Error404Component
   ]
 })
 export class SharedModule { }

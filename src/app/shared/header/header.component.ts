@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public openedDrawer: boolean = false;
+  public hideDrawer: boolean = false;
+
+
+  constructor(private router: Router) {
+    if(this.router.url === '/sign-in' || this.router.url === '/sign-up') {
+      this.hideDrawer = true;
+    }
+   }
 
   ngOnInit(): void {
   }
+
 
 }

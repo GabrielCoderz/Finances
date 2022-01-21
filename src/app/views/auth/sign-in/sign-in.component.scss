@@ -1,5 +1,6 @@
 .drawer-container-content {
   width: 100%;
+  background-color: #fffffc;
 }
 
 .login-container {
@@ -28,6 +29,10 @@ mat-card-title,
 mat-card-content {
   display: flex;
   justify-content: center;
+}
+
+mat-card-content {
+  padding-top: 10px;
 }
 
 .button {

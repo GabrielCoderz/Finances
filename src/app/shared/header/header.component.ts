@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { ResolveEnd, Router } from '@angular/router';
 import { BehaviorSubject, Subject } from 'rxjs';
 
 @Component({
@@ -14,10 +14,15 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(private router: Router) {
-    console.log(this.router.url)
-    if(this.router.url === '/sign-in' || this.router.url === '/sign-up') {
-      this.hideDrawer = true;
-    }
+    this.router.events.subscribe((routerData) => {
+      if(routerData instanceof ResolveEnd){
+         if(routerData.url === '/sign-in' || routerData.url === '/sign-up') {
+           this.hideDrawer = false;
+         } else {
+           this.hideDrawer = true;
+         }
+      }
+    })
    }
 
   ngOnInit(): void {

@@ -1,4 +1,6 @@
-<div *ngIf="routeLoading" class="loading">Aguarde...</div>
+<div *ngIf="routeLoading" class="loading">
+  <p>Aguarde...</p>
+</div>
 <app-header></app-header>
 <router-outlet *ngIf="!routeLoading"></router-outlet>
 

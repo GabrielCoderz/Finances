@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(private router: Router) {
+    console.log(this.router.url)
     if(this.router.url === '/sign-in' || this.router.url === '/sign-up') {
       this.hideDrawer = true;
     }

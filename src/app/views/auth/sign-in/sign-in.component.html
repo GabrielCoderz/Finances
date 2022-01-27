@@ -1,39 +1,29 @@
-<mat-drawer-container class="example-container">
 
-  <mat-drawer mode="over">Drawer content</mat-drawer>
-
-  <mat-drawer-content class="drawer-container-content">
-
-    <div class="login-container">
-      <mat-card>
-        <mat-card-title>Login</mat-card-title>
-        <mat-card-content>
-          <form>
-            <p>
-              <mat-form-field>
-                <input type="text" matInput placeholder="Username">
-              </mat-form-field>
-            </p>
-
-            <p>
-              <mat-form-field>
-                <input type="password" matInput placeholder="Password">
-              </mat-form-field>
-            </p>
-
-            <!-- <p *ngIf="error" class="error">
-                  {{ error }}
-                </p> -->
-
-            <div class="button">
-              <a>Não possui uma conta ?</a>
-              <button type="submit" mat-raised-button color="primary">Entrar</button>
-            </div>
-
-          </form>
-        </mat-card-content>
-      </mat-card>
-    </div>
-
-  </mat-drawer-content>
-</mat-drawer-container>
+<div class="card-container">
+  <mat-card>
+    <header>Login</header>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <section>
+        <mat-form-field appearance="fill">
+          <mat-label>E-mail</mat-label>
+          <input matInput ngModel placeholder="pat@example.com" name="email" required>
+          <mat-error>error</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Senha</mat-label>
+          <input matInput ngModel placeholder="pat@example.com" name="senha" required>
+          <mat-error>error</mat-error>
+        </mat-form-field>
+        <mat-checkbox color="primary">Salvar senha</mat-checkbox>
+      </section>
+      <div class="button">
+        <button mat-flat-button type="button" [routerLink]="['/sign-up']">Cadastrar nova conta</button>
+        <!-- [routerLink]="['/client/dashboard']" -->
+        <button mat-flat-button color="primary" type="submit" *ngIf="true">Entrar</button>
+        <div class="loading" *ngIf="false">
+          <mat-spinner diameter="35"></mat-spinner>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</div>

@@ -1,1 +1,27 @@
-<p>sign-up works!</p>
+<div class="card-container">
+  <mat-card>
+    <header>Cadastrar</header>
+    <form [formGroup]="formularioDeUsuario" (ngSubmit)="onSubmit()">
+      <section>
+        <mat-form-field appearance="fill">
+          <mat-label>E-mail</mat-label>
+          <input matInput placeholder="pat@example.com" formControlName="email" required>
+          <mat-error>Digite um email válido</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Senha</mat-label>
+          <input matInput formControlName="senha" required>
+          <mat-error>Mínimo de 8 caracteres</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Confirme a senha</mat-label>
+          <input matInput formControlName="confirmarSenha" required>
+          <mat-error>Senha diferente da anterior</mat-error>
+        </mat-form-field>
+      </section>
+      <div class="button">
+        <button mat-flat-button color="primary">Criar conta</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

@@ -10,5 +10,13 @@ html,
 body {
   height: 100%;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #fffffc;
+  background-image: linear-gradient(
+    to bottom,
+    #144081,
+    #362b59,
+    #321b36,
+    #20101a,
+    #000000
+  );
+  background-repeat: no-repeat;
 }

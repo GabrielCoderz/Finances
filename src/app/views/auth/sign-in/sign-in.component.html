@@ -7,19 +7,17 @@
         <mat-form-field appearance="fill">
           <mat-label>E-mail</mat-label>
           <input matInput ngModel placeholder="pat@example.com" name="email" required>
-          <mat-error>error</mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Senha</mat-label>
           <input matInput ngModel placeholder="pat@example.com" name="senha" required>
-          <mat-error>error</mat-error>
         </mat-form-field>
         <mat-checkbox color="primary">Salvar senha</mat-checkbox>
       </section>
       <div class="button">
         <button mat-flat-button type="button" [routerLink]="['/sign-up']">Cadastrar nova conta</button>
         <!-- [routerLink]="['/client/dashboard']" -->
-        <button mat-flat-button color="primary" type="submit" *ngIf="true">Entrar</button>
+        <button mat-flat-button color="primary" type="submit" *ngIf="true" >Entrar</button>
         <div class="loading" *ngIf="false">
           <mat-spinner diameter="35"></mat-spinner>
         </div>
